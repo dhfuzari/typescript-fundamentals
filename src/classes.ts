@@ -1,5 +1,6 @@
-// A basic Ts Class
-class UserAccount {
+// A basic Ts Class - An abstract class can't be instantiated, and it's purpose  
+// is to be used as base for other classes
+abstract class UserAccount {
   public age: number; // public access modifier - You can get and access it even out of the class scope
   readonly name: string; // protected access modifies - You can access this member from it's class ou it's subclasses
 
@@ -13,10 +14,6 @@ class UserAccount {
   }
 }
 
-const dhFuzari = new UserAccount(37, 'Daniel H. Fuzari');
-console.log(dhFuzari);
-console.log(dhFuzari.age);
-dhFuzari.logDetails();
 
 // Extending classes
 class CharAccount extends UserAccount {
@@ -47,6 +44,7 @@ gcFuzariChar.logDetails();
 gcFuzariChar.logDetailsChar();
 gcFuzariChar.age = 65;
 console.log(gcFuzariChar.age);
+console.log(gcFuzariChar.name);
 console.log(gcFuzariChar.getLevel);
 gcFuzariChar.setLevel = 499;
 console.log(gcFuzariChar.getLevel);
