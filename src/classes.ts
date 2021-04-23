@@ -18,3 +18,18 @@ console.log(dhFuzari);
 console.log(dhFuzari.age);
 console.log(dhFuzari.name);
 dhFuzari.logDetails();
+
+// Extending classes
+class CharAccount extends UserAccount {
+  nickName: string;
+  level: number;
+
+  constructor(nickName: string, level: number, age: number, name: string) {
+    super(age, name);
+    this.nickName = nickName;
+    this.level = level;
+  }
+}
+
+const dhFuzariChar = new CharAccount('gcFuzari', 100, 64, 'Geraldo C. Fuzari');
+dhFuzariChar.logDetails();
