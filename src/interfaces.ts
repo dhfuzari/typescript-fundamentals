@@ -4,7 +4,7 @@ interface IGame {
   genre?: string;
   platform: string[];
 
-  getSimilars: (title: string) => void 
+  getSimilars?: (title: string) => void 
 }
 
 const theLastOfUs: IGame = {
@@ -16,6 +16,19 @@ const theLastOfUs: IGame = {
   }
 }
 
-theLastOfUs.getSimilars(theLastOfUs.title);
+theLastOfUs.getSimilars && theLastOfUs.getSimilars(theLastOfUs.title);
 console.log(theLastOfUs);
 // theLastOfUs.description = 'Lorem ipsum description'; //readonly member
+
+interface IDlc extends IGame {
+  originalGame: IGame;
+  newContent: string[];
+}
+
+const leftBehind:IDlc = {
+  title: 'The Last of Us - Left Behind',
+  description: 'You play as Ellie before the original game',
+  originalGame: theLastOfUs,
+  newContent: ['3 hours story', 'new characters'],
+  platform: ['PS4']
+}
