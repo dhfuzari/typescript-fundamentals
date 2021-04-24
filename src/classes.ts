@@ -2,7 +2,7 @@
 // is to be used as base for other classes
 abstract class UserAccount {
   public age: number; // public access modifier - You can get and access it even out of the class scope
-  readonly name: string; // protected access modifies - You can access this member from it's class ou it's subclasses
+  readonly name: string; // readonly access modifier - You can read it, but you can't set it without of the class definition
 
   constructor(age: number, name: string) {
     this.age = age;
@@ -18,7 +18,7 @@ abstract class UserAccount {
 // Extending classes
 class CharAccount extends UserAccount {
   private nickName: string; // private access modifier - You can't get and even set the value without of the class definition
-  protected level: number; // readonly access modifier - You can read it, but you can't set it without of the class definition
+  protected level: number; // protected access modifies - You can access this member from it's class ou it's subclasses
 
   constructor(nickName: string, level: number, age: number, name: string) {
     super(age, name);
