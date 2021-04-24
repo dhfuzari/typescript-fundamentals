@@ -20,6 +20,8 @@ theLastOfUs.getSimilars && theLastOfUs.getSimilars(theLastOfUs.title);
 console.log(theLastOfUs);
 // theLastOfUs.description = 'Lorem ipsum description'; //readonly member
 
+
+// Extending an interface
 interface IDlc extends IGame {
   originalGame: IGame;
   newContent: string[];
@@ -31,4 +33,17 @@ const leftBehind:IDlc = {
   originalGame: theLastOfUs,
   newContent: ['3 hours story', 'new characters'],
   platform: ['PS4']
+}
+
+// Implementing an interface
+class PlaystationGame implements IGame {
+  title: string;
+  description: string;
+  platform: string[];
+
+  constructor(title: string, description: string, platform: string[]) {
+    this.title = title;
+    this.description = description;
+    this.platform = platform;
+  }
 }
