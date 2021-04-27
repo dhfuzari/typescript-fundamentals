@@ -31,10 +31,13 @@ collection.push(5);
 // tuple: [type, type, type, ...] - Defined number of items with respective types and positions
 let types: [number, string, string, boolean];
 types = [1, 'foo', 'bar', false];
-types[0] = 5;
+types[0] = 2;
+types[1] = 'bar';
+types[2] = 'foo';
+types[3] = true;
 types.push(2);
-types.push(3);
-types.push(4);
+types.push('foo bar');
+types.push(true);
 types.push(5);
 
 // enum: 
@@ -71,9 +74,3 @@ cart = {
   color: "#f5af00",
   electric: false
 };
-
-
-
-
-
-

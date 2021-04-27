@@ -11,13 +11,14 @@ const theLastOfUs: IGame = {
   title: 'The Last of Us',
   description: 'The best game in the world',
   platform: ['PS3, PS4'],
+  
   getSimilars: (title: string) => {
     console.log(`Similar games to ${title}: Uncharted, A Plague Tale, Metro`);
   }
 }
 
 theLastOfUs.getSimilars && theLastOfUs.getSimilars(theLastOfUs.title);
-console.log(theLastOfUs);
+console.log("🚀 ~ file: interfaces.ts ~ line 21 ~ theLastOfUs", theLastOfUs)
 // theLastOfUs.description = 'Lorem ipsum description'; //readonly member
 
 
@@ -47,3 +48,22 @@ class PlaystationGame implements IGame {
     this.platform = platform;
   }
 }
+
+class DlcGame implements IDlc {
+  title: string;
+  description: string;
+  platform: Array<string>;
+  originalGame: IGame;
+  newContent: Array<string>;
+
+  constructor(title: string, description: string, platform: string[], originalGame: IGame, newContent: string[]) {
+    this.title = title;
+    this.description = description;
+    this.platform = platform;
+    this.originalGame = originalGame;
+    this.newContent = newContent;
+  }
+}
+
+const rightBehind = new DlcGame('Right Behind', 'You play as John before the original game', ['PS4, PS5'], theLastOfUs, ['4 hours history']);
+console.log("🚀 ~ file: interfaces.ts ~ line 69 ~ rightBehind", rightBehind)
