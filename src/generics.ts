@@ -39,7 +39,8 @@ const newStateNumber = useState<number>();
 newStateNumber.setState(123);
 console.log(newStateNumber.getState());
 
+/*
 const newStateBoolean = useState<boolean>()  // causes an error
 newStateBoolean.setState(true);
 console.log(newStateBoolean.getState());
- 
+ */
