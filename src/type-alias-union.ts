@@ -10,7 +10,7 @@ function logDetails(uuid: number | string, item: string) {
   console.log(`A product with ${uuid} has a title as ${item}`)
 }
 
-// instead og use "number | string" union, I could use the "Uuid" type alias
+// instead of use "number | string" union, I could use the "Uuid" type alias
 type Uuid = number | string;
 
 function logInfo(uuid: Uuid, user: string) {
@@ -24,9 +24,9 @@ logInfo(12, "Daniel"); // uuid as number
 logInfo('13', "Henrique"); // uuid as string
 
 // Type alias for pre-defined values
-type PLatform = 'MacOS' | 'Linux' | 'Windows';
+type Platform = 'MacOS' | 'Linux' | 'Windows';
 
-function renderPlatform(platform: PLatform) {
+function renderPlatform(platform: Platform) {
   console.log(`My platform is ${platform}`);
 }
 renderPlatform('MacOS');

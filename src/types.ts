@@ -8,6 +8,7 @@ let message: string;
 message = 'foo';
 message = "foo";
 message = `foo`;
+message = `foo ${isOpen}`;
 
 // number: int/float/hex/binary
 let total: number;

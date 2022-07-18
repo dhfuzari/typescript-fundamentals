@@ -1,10 +1,26 @@
-// A basic Ts Class - An abstract class can't be instantiated, and it's purpose  
+// A basic Ts Class
+class BasicUserAccount {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  logDetails() {
+    console.log(`The player ${this.name} is ${this.age} years old`);
+  }
+}
+
+
+// An abstract class can't be instantiated, and it's purpose  
 // is to be used as base for other classes
-abstract class UserAccount {
+abstract class AbstractUserAccount {
   public age: number; // public access modifier - You can get and access it even out of the class scope
   readonly name: string; // readonly access modifier - You can read it, but you can't set it without of the class definition
 
-  constructor(age: number, name: string) {
+  constructor(name: string, age: number) {
     this.age = age;
     this.name = name;
   }
@@ -16,12 +32,12 @@ abstract class UserAccount {
 
 
 // Extending classes
-class CharAccount extends UserAccount {
+class CharAccount extends AbstractUserAccount {
   private nickName: string; // private access modifier - You can't get and even set the value without of the class definition
   protected level: number; // protected access modifies - You can access this member from it's class ou it's subclasses
 
   constructor(nickName: string, level: number, age: number, name: string) {
-    super(age, name);
+    super(name, age);
     this.nickName = nickName;
     this.level = level;
   }
@@ -39,6 +55,10 @@ class CharAccount extends UserAccount {
   }
 }
 
+const dhfuzari = new BasicUserAccount('Daniel H. Fuzari', 38);
+console.log(dhfuzari);
+dhfuzari.logDetails();
+
 const gcFuzariChar = new CharAccount('gcFuzari', 100, 64, 'Geraldo C. Fuzari');
 gcFuzariChar.logDetails();
 gcFuzariChar.logDetailsChar();
@@ -48,3 +68,4 @@ console.log(gcFuzariChar.name);
 console.log(gcFuzariChar.getLevel);
 gcFuzariChar.setLevel = 499;
 console.log(gcFuzariChar.getLevel);
+console.log(gcFuzariChar.name);

@@ -24,11 +24,11 @@ const todo2:Todo = updateTodo(todo, { completed: true });
 console.log(todo2);
 
 // *** Pick type utility: From <T>, pick a set of properties whose keys are in the union K
-type TodoPreview = Pick<Todo, "title" | "description">
+type TodoPreview = Pick<Todo, "title" | "completed">
 
 const todo3:TodoPreview = {
-  title: 'Advertise the PS3 for sale',
-  description: 'Advertise it at OLX'
+  title: 'Advertise the PS3 for sale',  
+  completed: false
 }
 
 console.log(todo3);
@@ -42,5 +42,3 @@ const todo4:TodoOmit = {
 }
 
 console.log(todo4);
-
-
